@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["cli","frontend"]
+members = ["cli", "frontend"]
 
 [workspace.dependencies] 
 frontend = { path = "frontend" }
