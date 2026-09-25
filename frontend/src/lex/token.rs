@@ -1,5 +1,6 @@
 use crate::span::Span;
 
+#[derive(Debug, PartialEq, Eq)]
 pub enum TokenKind {
     IntegerLiteral,
 
@@ -14,6 +15,7 @@ pub enum TokenKind {
     Eof,
 }
 
+#[derive(Debug)]
 pub struct Token {
     pub kind: TokenKind,
     pub span: Span,

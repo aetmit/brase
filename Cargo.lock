@@ -5,6 +5,10 @@ version = 4
 [[package]]
 name = "brase"
 version = "0.1.0"
+dependencies = [
+ "common",
+ "frontend",
+]
 
 [[package]]
 name = "common"

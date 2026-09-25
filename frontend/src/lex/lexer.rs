@@ -41,7 +41,7 @@ impl<'a> Lexer<'a> {
     }
 
     fn create_token(&self, kind: TokenKind) -> Token {
-        Token::new(kind, Span::new(self.start, self.current - self.start), self.line, self.column)
+        Token::new(kind, Span::new(self.start, self.current - self.start), self.line, self.start_column)
     }
 }
 
@@ -54,7 +54,7 @@ impl<'a> TokenStream for Lexer<'a> {
                     continue;
                 }
             } else {
-                return self.create_token(TokenKind::Eof);
+                return Token::new(TokenKind::Eof, Span::new(self.current, 0), self.line, self.column)
             }
 
             self.start = self.current;
